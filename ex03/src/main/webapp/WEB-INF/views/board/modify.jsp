@@ -32,7 +32,7 @@
 					</div>
 	
 					<div class="form-group">
-							<label>Title</label> 
+						<label>Title</label> 
 						<input class="form-control" name="Title" value='<c:out value="${board.title }"/>'>
 					</div>
 					<div class="form-group">

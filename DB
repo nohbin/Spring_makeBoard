@@ -26,7 +26,8 @@ create table tbl_board(
     alter table tbl_reply add constraint fk_reply_board
     foreign key (bno) references tbl_board(bno);
     
-    
+    create index test_idx on tbl_board (bno desc);
+    create index idx_reply on tbl_reply (bno desc, rno asc);
     
     insert into tbl_board(bno,title,content,writer) 
     values(seq_board.nextval, '테스트 제목' , '테스트 내용' , 'user00');
@@ -48,6 +49,7 @@ where bno >0 ;
 commit;
 
 create index test_idx on tbl_board (bno desc);
+create index idx_reply on tbl_reply (bno desc, rno asc);
 
 select /*+ index(tbl_board test_idx) */ * from tbl_board;
 
